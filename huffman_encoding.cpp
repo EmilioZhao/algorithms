@@ -57,6 +57,7 @@ Node* Huffman_tree(string& src, map<char, uint32_t>& m) {
     constexpr auto lambda_cmp = [](Node* p_1, Node* p_2) {
         return p_1->freq > p_2->freq;
     }; //lambda expr has no default constructor, so we need to pass it in arguments
+    //ref: https://blog.csdn.net/liu2012huan/article/details/52932494
     
     priority_queue<Node*, vector<Node*>, decltype(lambda_cmp)> min_heap(lambda_cmp);
     for (auto& p : m) {
